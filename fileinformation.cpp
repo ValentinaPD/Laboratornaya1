@@ -1,11 +1,21 @@
 #include "fileinformation.h"
-
-FileInformation::FileInformation(QString _fileName,int _size, bool _isExist) :
+/*
+FileInformation::FileInformation(const QString& _fileName,int _size, bool _isExist) :
     fileName(_fileName),
     size(_size),
     isExist(_isExist)
 { }
-
+*/
+FileInformation::FileInformation(){
+    fileName = "NoFile";
+    size = 0;
+    isExist = false;
+}
+FileInformation::FileInformation(const QString& _fileName,int _size, bool _isExist){
+    fileName = _fileName;
+    size = _size;
+    isExist = _isExist;
+}
 QString FileInformation::GetFileName()
 {
     return fileName;

@@ -8,7 +8,8 @@ class FileInformation
     int size;//Размер файла
     bool isExist;
 public:
-    FileInformation(QString _fileName,int _size, bool _isExist);
+    FileInformation();
+    FileInformation(const QString& _fileName,int _size = 0, bool _isExist = 0);
     QString GetFileName();
     int GetFileSize();
     bool IsExist();
