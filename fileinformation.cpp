@@ -1,20 +1,22 @@
 #include "fileinformation.h"
 
-FileInformation::FileInformation(QString _fileName,int _size, bool _isExist)
-{
-    fileName = _fileName;
-    size = _size;
-    isExist = _isExist;
-}
-FileInformation::GetFileName()
+FileInformation::FileInformation(QString _fileName,int _size, bool _isExist) :
+    fileName(_fileName),
+    size(_size),
+    isExist(_isExist)
+{ }
+
+QString FileInformation::GetFileName()
 {
     return fileName;
 }
-FileInformation::GetFileSize()
+
+int FileInformation::GetFileSize()
 {
     return size;
 }
-FileInformation::IsExist()
+
+bool FileInformation::IsExist()
 {
     return isExist;
 }
