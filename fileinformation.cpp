@@ -1,4 +1,6 @@
 #include "fileinformation.h"
+#include <QTextStream>
+
 /*
 FileInformation::FileInformation(const QString& _fileName,int _size, bool _isExist) :
     fileName(_fileName),
@@ -36,6 +38,8 @@ void FileInformation::Refresh()
    QFileInfo q_info(fileName);
    exist = q_info.exists();
    size = q_info.size();
+    QTextStream out(stdout);
+    out << q_info.isFile()<< endl;
 }
 bool FileInformation::IsChanged()
 {
