@@ -9,12 +9,13 @@ FileInformation::FileInformation(const QString& _fileName,int _size, bool _isExi
 FileInformation::FileInformation(){
     fileName = "NoFile";
     size = 0;
-    isExist = false;
+    exist = false;
 }
-FileInformation::FileInformation(const QString& _fileName,int _size, bool _isExist){
+FileInformation::FileInformation(const QString& _fileName){
+    QFileInfo fileInfo(_fileName);
     fileName = _fileName;
-    size = _size;
-    isExist = _isExist;
+    size = fileInfo.size();
+    exist = fileInfo.exists();
 }
 QString FileInformation::GetFileName()
 {
@@ -28,5 +29,17 @@ int FileInformation::GetFileSize()
 
 bool FileInformation::IsExist()
 {
-    return isExist;
+    return exist;
+}
+void FileInformation::Refresh()
+{
+   QFileInfo q_info(fileName);
+   exist = q_info.exists();
+   size = q_info.size();
+}
+bool FileInformation::IsChanged()
+{
+    QFileInfo q_info(fileName);
+    if(q_info.exists() != exist || q_info.size() != size) return true;
+    else return false;
 }

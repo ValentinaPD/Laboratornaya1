@@ -7,7 +7,7 @@ FileMonitor::FileMonitor()
 }
 void FileMonitor::AddFile(QString _fileName)
 {
-    FileInformation file(_fileName, 0, false);
+    FileInformation file(_fileName);
     QVector<int> vec;
     files.push_back(file);
 }
