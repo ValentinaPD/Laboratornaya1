@@ -15,21 +15,21 @@ void FileMonitor::AddFile(QString _fileName)
 //Слежение за файлами
 void FileMonitor::Monitor()
 {
-    PrintFileInformation p;
-    while(true)
-    {
-        std::this_thread::sleep_for( std::chrono::milliseconds(100));
-        for(FileInformation &file_info: files){
-            if(file_info.IsChanged())
+    for(FileInformation &file_info: files){
+        if(file_info.IsChanged())
             {
+                if(file_info.IsExistChanged())
+                {
 
+                }
+                else if(file_info.IsSizeChanged())
+                {
+
+                }
                 file_info.Refresh();
-                p.Print(file_info.GetFileName(),file_info.GetFileSize(),file_info.IsExist());
-
             }
-        }
-
     }
+
 
 }
 

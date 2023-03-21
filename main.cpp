@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     FileMonitor fl;
     fl.AddFile("C:\\MyFiles\\text.txt");
     fl.AddFile("C:\\MyFiles\\text1.txt");
+
     fl.Monitor();
     return a.exec();
 }
