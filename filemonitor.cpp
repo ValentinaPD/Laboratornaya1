@@ -1,8 +1,7 @@
 #include "filemonitor.h"
-#include <QTextStream>
-#include <thread>         // std::this_thread::sleep_for
-#include <chrono>         // std::chrono::seconds
-
+#include <thread>
+#include <chrono>
+#include "printfileinformation.h"
 FileMonitor::FileMonitor()
 {
 
@@ -16,13 +15,17 @@ void FileMonitor::AddFile(QString _fileName)
 void FileMonitor::Monitor()
 {
     QTextStream out(stdout);
+    PrintFileInformation p;
     while(true)
     {
         std::this_thread::sleep_for( std::chrono::milliseconds(100));
         for(FileInformation &file_info: files){
             if(file_info.IsChanged())
             {
+
                 file_info.Refresh();
+                p.Print(file_info.GetFileName(),file_info.GetFileSize(),file_info.IsExist());
+
             }
         }
 
