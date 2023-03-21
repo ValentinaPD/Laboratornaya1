@@ -8,8 +8,6 @@ FileInformation::FileInformation(const QString& _fileName,int _size, bool _isExi
 { }*/
 
 FileInformation::FileInformation(){
-    QTextStream out(stdout);
-    out <<"Конструктор по умолчанию"<< endl;
     fileName = "NoFile";
     size = 0;
     exist = false;

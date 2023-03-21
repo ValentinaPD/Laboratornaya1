@@ -14,7 +14,6 @@ void FileMonitor::AddFile(QString _fileName)
 }
 void FileMonitor::Monitor()
 {
-    QTextStream out(stdout);
     PrintFileInformation p;
     while(true)
     {
