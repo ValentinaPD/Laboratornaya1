@@ -7,8 +7,10 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
     FileMonitor fl;
-    fl.AddFile("C:\\WpfApp2\\WpfApp2.sln");
-    QTextStream out(stdout);
+    fl.AddFile("C:\\MyFiles\\text.txt");
+    fl.AddFile("C:\\MyFiles\\text1.txt");
+    fl.Monitor();
+    //QTextStream out(stdout);
     //out << info1.size()<< endl;
     return a.exec();
 }

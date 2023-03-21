@@ -1,14 +1,15 @@
 #include "fileinformation.h"
-#include <QTextStream>
 
 /*
 FileInformation::FileInformation(const QString& _fileName,int _size, bool _isExist) :
     fileName(_fileName),
     size(_size),
     isExist(_isExist)
-{ }
-*/
+{ }*/
+
 FileInformation::FileInformation(){
+    QTextStream out(stdout);
+    out <<"Конструктор по умолчанию"<< endl;
     fileName = "NoFile";
     size = 0;
     exist = false;
@@ -38,8 +39,6 @@ void FileInformation::Refresh()
    QFileInfo q_info(fileName);
    exist = q_info.exists();
    size = q_info.size();
-    QTextStream out(stdout);
-    out << q_info.isFile()<< endl;
 }
 bool FileInformation::IsChanged()
 {

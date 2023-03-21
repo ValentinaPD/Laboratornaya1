@@ -2,6 +2,7 @@
 #define FILEINFORMATION_H
 #include <QString>
 #include <QFileInfo>
+#include <QTextStream>
 
 class FileInformation
 {
