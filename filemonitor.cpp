@@ -22,7 +22,6 @@ void FileMonitor::Monitor()
         for(FileInformation &file_info: files){
             if(file_info.IsChanged())
             {
-                out << "File changed"<< endl;
                 file_info.Refresh();
             }
         }
