@@ -46,3 +46,17 @@ bool FileInformation::IsChanged()
     if(q_info.exists() != exist || q_info.size() != size) return true;
     else return false;
 }
+//Функция возращает true если изменен размер файла, false если изменений размера нет
+bool FileInformation::IsSizeChanged()
+{
+    QFileInfo q_info(fileName);
+    if(q_info.size() != size) return true;
+    else return false;
+}
+//Функция возращает true если изменено состояние файла, false если изменений нет
+bool FileInformation::IsExistChanged()
+{
+    QFileInfo q_info(fileName);
+    if(q_info.exists() != exist) return true;
+    else return false;
+}

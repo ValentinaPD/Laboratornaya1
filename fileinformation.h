@@ -8,7 +8,7 @@ class FileInformation
 {
     QString fileName;//Имя файла
     int size;//Размер файла
-    bool exist;
+    bool exist;//Существование файла
 
 public:
     FileInformation();
@@ -16,8 +16,11 @@ public:
 
     QString GetFileName();
     int GetFileSize();
+
     bool IsExist();
     bool IsChanged();
+    bool IsSizeChanged();
+    bool IsExistChanged();
 
     void Refresh();
 };
