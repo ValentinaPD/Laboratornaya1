@@ -6,12 +6,14 @@ FileMonitor::FileMonitor()
 {
 
 }
+//Добавление файла для слежения
 void FileMonitor::AddFile(QString _fileName)
 {
     FileInformation file(_fileName);
     QVector<int> vec;
     files.push_back(file);  
 }
+//Слежение за файлами
 void FileMonitor::Monitor()
 {
     PrintFileInformation p;

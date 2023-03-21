@@ -6,7 +6,7 @@
 
 class FileMonitor
 {
-   QVector<FileInformation> files;
+   QVector<FileInformation> files; //Список файлов
 public:
     FileMonitor();
     void AddFile(QString _fileName);

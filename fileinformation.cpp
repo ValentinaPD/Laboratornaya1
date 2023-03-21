@@ -32,12 +32,14 @@ bool FileInformation::IsExist()
 {
     return exist;
 }
+//Обновление информации о файле
 void FileInformation::Refresh()
 {
    QFileInfo q_info(fileName);
    exist = q_info.exists();
    size = q_info.size();
 }
+//Функция возращает true если произошли изменения в файле, false если изменений нет
 bool FileInformation::IsChanged()
 {
     QFileInfo q_info(fileName);

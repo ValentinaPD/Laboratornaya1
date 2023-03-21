@@ -1,5 +1,6 @@
 #include "printfileinformation.h"
 #include <QTextStream>
+
 PrintFileInformation::PrintFileInformation()
 {
 
