@@ -2,6 +2,7 @@
 #define PRINTFILEINFORMATION_H
 #include <QString>
 #include <QObject>
+#include <QTextStream>
 
 class PrintFileInformation: public QObject
 {

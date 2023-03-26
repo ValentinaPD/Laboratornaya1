@@ -1,11 +1,9 @@
 #include "printfileinformation.h"
-#include <QTextStream>
+
 
 PrintFileInformation::PrintFileInformation()
 {
     message = "";
-    QTextStream out(stdout);
-    out << "I'm constructor"<<endl;
 }
 /*
 void PrintFileInformation::Print(QString _fileName, int _size, bool _exist){
