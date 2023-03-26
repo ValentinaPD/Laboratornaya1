@@ -3,8 +3,11 @@
 
 PrintFileInformation::PrintFileInformation()
 {
-
+    message = "";
+    QTextStream out(stdout);
+    out << "I'm constructor"<<endl;
 }
+/*
 void PrintFileInformation::Print(QString _fileName, int _size, bool _exist){
 
     QTextStream out(stdout);
@@ -16,4 +19,9 @@ void PrintFileInformation::Print(QString _fileName, int _size, bool _exist){
     {
          out << "File "<< _fileName<<" does not exists"<< endl;
     }
+}
+*/
+void PrintFileInformation::PrintInfo(QString str){
+    QTextStream out(stdout);
+    out << str<<endl;
 }

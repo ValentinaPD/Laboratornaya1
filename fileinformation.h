@@ -17,12 +17,14 @@ public:
     QString GetFileName();
     int GetFileSize();
 
-    bool IsExist();
-    bool IsChanged();
+    void Refresh();
+
     bool IsSizeChanged();
     bool IsExistChanged();
 
-    void Refresh();
+    bool IsExist();
+    bool IsChanged();
+
 };
 
 #endif // FILEINFORMATION_H

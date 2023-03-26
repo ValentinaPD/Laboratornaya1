@@ -1,12 +1,20 @@
 #ifndef PRINTFILEINFORMATION_H
 #define PRINTFILEINFORMATION_H
 #include <QString>
+#include <QObject>
 
-class PrintFileInformation
+class PrintFileInformation: public QObject
 {
+    Q_OBJECT
 public:
     PrintFileInformation();
-    void Print(QString _fileName, int _size, bool _exist);
+
+private:
+    QString message;
+public slots:
+    void PrintInfo(QString str);
 };
+
+
 
 #endif // PRINTFILEINFORMATION_H
