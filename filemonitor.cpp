@@ -1,10 +1,13 @@
 #include "filemonitor.h"
 #include <QTextStream>
 
-FileMonitor::FileMonitor()
+FileMonitor::FileMonitor(){
+
+}
+FileMonitor& FileMonitor::Instance()
 {
-    FileInformation file("text.txt");
-    files.push_back(file);
+    static FileMonitor s;
+    return s;
 }
 //Добавление файла для слежения
 void FileMonitor::AddFile(QString _fileName)

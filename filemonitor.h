@@ -11,13 +11,13 @@ class FileMonitor: public QObject
     Q_OBJECT
 private:
    QVector<FileInformation> files; //Список файлов
+   FileMonitor();
+   FileMonitor(FileMonitor const&);
+   FileMonitor& operator = (FileMonitor const&);
 public:
-    FileMonitor();
+    static FileMonitor& Instance();
     void AddFile(QString _fileName);
     void Monitor();
-
-   // void IsFileSizeChanged(QString str);
-   // void IsFileExistChanged(QString str);
 
 signals:
     void FileChanged(QString str);
