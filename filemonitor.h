@@ -4,7 +4,6 @@
 #include <QVector>
 #include <QString>
 #include "fileinformation.h"
-#include "printfileinformation.h"
 
 class FileMonitor: public QObject
 {
@@ -14,9 +13,13 @@ private:
    FileMonitor();
    FileMonitor(FileMonitor const&);
    FileMonitor& operator = (FileMonitor const&);
+
+   bool CheckRepeatFile(QString _fileName);
+   int SearchFile(QString _fileName);
 public:
     static FileMonitor& Instance();
     void AddFile(QString _fileName);
+    //void DeleteFiles();
     void Monitor();
 
 signals:

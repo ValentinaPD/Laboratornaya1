@@ -12,9 +12,26 @@ FileMonitor& FileMonitor::Instance()
 //Добавление файла для слежения
 void FileMonitor::AddFile(QString _fileName)
 {
-    FileInformation file(_fileName);
-    files.push_back(file);  
+   try{
+        if(!CheckRepeatFile(_fileName))
+            throw "File repeats";
+        FileInformation file(_fileName);
+        files.push_back(file);
+   }
+   catch(QString& error){
 
+   }
+
+}
+bool FileMonitor::CheckRepeatFile(QString _fileName){
+    return SearchFile(_fileName)==-1 ? false:true;
+}
+int FileMonitor::SearchFile(QString _fileName){
+    for(int i=0; i<files.count();i++){
+        if(files[i].GetFileName()==_fileName)
+            return i;
+    }
+    return -1;
 }
 //Слежение за файлами
 void FileMonitor::Monitor()
