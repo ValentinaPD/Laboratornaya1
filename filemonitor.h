@@ -21,9 +21,10 @@ public:
     void AddFile(QString _fileName);
     //void DeleteFiles();
     void Monitor();
-
+    void LogError(QString _error);
 signals:
     void FileChanged(QString str);
+    void ErrorSinal(QString str);
 };
 
 #endif // FILEMONITOR_H

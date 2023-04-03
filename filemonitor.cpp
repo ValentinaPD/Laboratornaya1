@@ -13,15 +13,22 @@ FileMonitor& FileMonitor::Instance()
 void FileMonitor::AddFile(QString _fileName)
 {
    try{
-        if(!CheckRepeatFile(_fileName))
-            throw "File repeats";
+        if(CheckRepeatFile(_fileName))
+            throw QString("File repeats");
+
+
         FileInformation file(_fileName);
         files.push_back(file);
    }
-   catch(QString& error){
-
+   catch(QString _error){
+        LogError("njnkjnkj");
+        system("pause");
    }
 
+}
+void FileMonitor::LogError(QString _error){
+
+    emit ErrorSinal("error");
 }
 bool FileMonitor::CheckRepeatFile(QString _fileName){
     return SearchFile(_fileName)==-1 ? false:true;
@@ -36,7 +43,6 @@ int FileMonitor::SearchFile(QString _fileName){
 //Слежение за файлами
 void FileMonitor::Monitor()
 {
-
     for(FileInformation &file_info: files){
 
         if(file_info.IsChanged())
