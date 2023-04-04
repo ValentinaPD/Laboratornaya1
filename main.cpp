@@ -12,18 +12,21 @@ int main(int argc, char *argv[])
     PrintFileInformation printer;
     FileMonitor& instance = FileMonitor::Instance();
     instance.AddFile("C:\\MyFiles\\text.txt");
-    instance.AddFile("C:\\MyFiles\\text.txt");
+    instance.AddFile("");
     instance.AddFile("C:\\MyFiles\\text1.txt");
-    //instance.DeleteFiles();
 
+    QVector<QString> _files;
+    _files = instance.GetFilesInfo();
+
+     for(int i = 0; i<_files.count();i++){
+            printer.PrintInfo(_files[i]);
+     }
 
     QObject::connect(&instance, SIGNAL(FileChanged(QString)), &printer, SLOT(PrintInfo(QString)));
-    QObject::connect(&instance, SIGNAL(ErrorSinal(QString)), &printer, SLOT(PrintError(QString)));
     while(true)
     {
             std::this_thread::sleep_for( std::chrono::milliseconds(100));
             instance.Monitor();
-
     }
 
     return a.exec();

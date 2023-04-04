@@ -16,15 +16,15 @@ private:
 
    bool CheckRepeatFile(QString _fileName);
    int SearchFile(QString _fileName);
+
 public:
     static FileMonitor& Instance();
     void AddFile(QString _fileName);
-    //void DeleteFiles();
     void Monitor();
-    void LogError(QString _error);
+    QVector<QString> GetFilesInfo();
+
 signals:
     void FileChanged(QString str);
-    void ErrorSinal(QString str);
 };
 
 #endif // FILEMONITOR_H

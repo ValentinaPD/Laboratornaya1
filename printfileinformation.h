@@ -3,8 +3,7 @@
 #include <QString>
 #include <QObject>
 #include <QTextStream>
-#include <conio.h>
-#include <stdio.h>
+#include <windows.h>
 
 class PrintFileInformation: public QObject
 {
@@ -16,7 +15,6 @@ private:
     QString message;
 public slots:
     void PrintInfo(QString str);
-    void PrintError(QString str);
 };
 
 
