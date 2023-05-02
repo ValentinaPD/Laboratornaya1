@@ -24,6 +24,7 @@ public:
 
     bool IsExist();
     bool IsChanged();
+    bool IsFile();
 
 };
 

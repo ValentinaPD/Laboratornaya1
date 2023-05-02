@@ -60,3 +60,9 @@ bool FileInformation::IsExistChanged()
     if(q_info.exists() != exist) return true;
     else return false;
 }
+bool FileInformation::IsFile()
+{
+    QFileInfo q_info(fileName);
+    if(q_info.isFile()) return true;
+    else return false;
+}
