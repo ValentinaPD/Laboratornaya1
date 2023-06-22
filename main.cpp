@@ -11,12 +11,14 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
     PrintFileInformation printer;
     FileMonitor& instance = FileMonitor::Instance();
+
     //Тест №1 Добавляем фаил без названия
     //Тест №2 Добавляем фаилы с одинаковыми названиями
     //Тест №2 Добавляем не фаил(папку)
 
     instance.AddFile("C:\\MyFiles\\text.txt");
     instance.AddFile("");
+    instance.AddFile("C:\\MyFiles\\text1.txt");
     instance.AddFile("C:\\MyFiles\\text1.txt");
     instance.AddFile("C:\\MyFiles\\text1.txt");
     instance.AddFile("C:\\MyFiles");
